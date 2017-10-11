@@ -45,7 +45,13 @@ defaults:
       layout: "post"
       author: "loveWM"
       header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
-
+    -
+    scope:
+      path: "test"
+      type: "pages" # 以前的 `page`， 在 Jekyll 2.2 里。
+    values:
+      layout: "project" # 覆盖之前的默认布局
+      author: "Mr. Hyde"
 # Comments 
 comments :
   provider : duoshuo
