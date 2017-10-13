@@ -1,7 +1,32 @@
-# [murmur](http://songroger.github.io/murmur)
+# Dekyll
 
-![preview](preview.png)
+Jekyll theme based on default Jekyll's default style. [Demo Dekyll Theme](http://www.kaklabs.com).
 
-This is another simple theme for [jekyll](http://jekyllrb.com/).
-Try to edit `_config.yml` first before use it.
-Replace all the blabla configurations(like "avatar", "about", "title", etc.) to your owns.
+All configuration is under `_config.yml` file.
+
+### Dependencies
+* jekyll 3
+* jekyll-sitemap
+* jekyll-paginate
+* jekyll-redirect-from
+* jekyll-seo-tag
+
+### Features
+* Support Jekyll 3
+* No Javascript required
+* CSS Compression
+* Related articles
+* Responsive
+* Support pagination
+* Sitemap
+* Support redirection
+* Social media sharing buttons
+* Google Analytic and Disqus
+* Jekyll SEO tag
+
+### How to Build
+Google Analytic and Disqus are only rendered in production environment, you must set `JEKYLL_ENV=production` when building Dekyll.
+
+```
+JEKYLL_ENV=production jekyll build
+```
