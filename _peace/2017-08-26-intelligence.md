@@ -1,5 +1,5 @@
 ---
-#permalink: /peace/intelligence-english.html
+permalink: /peace/intelligence-english.html
 title: "人工智能与英语学习"
 ---
 
