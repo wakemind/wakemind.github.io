@@ -12,7 +12,7 @@ description: Xizhi's Ideas & Blogs
 # twitter_username: jekyllrb
 github_username: LiXizhi
 #permalink: /:year/:month/:day/:title/
-premalink: /:categories/:title/
+premalink: /:categories/:title
 
 # this is the url root of the view source link on the footer page.
 viewsourceroot: https://github.com/LiXizhi/LiXizhi.github.io/blob/master/
