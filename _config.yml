@@ -41,6 +41,6 @@ author:
 # Build settings
 markdown: kramdown
 
-permalink: /:categories/:year/:title.html
+permalink: /:categories/:title.html
 
 
