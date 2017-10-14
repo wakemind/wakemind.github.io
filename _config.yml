@@ -68,12 +68,6 @@ social:
   name                   : Franklin # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
-# Analytics
-analytics:
-  provider               : “google-universal" # false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id          : UA-100474556-1
-
 
 # Site Author
 author:
@@ -172,7 +166,7 @@ sass:
 
 # Outputting
 permalink: /:categories/:title.html
-paginate: 5 # amount of posts to show
+paginate: 2 # amount of posts to show
 paginate_path: /page:num/
 timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -180,19 +174,10 @@ timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 # Plugins
 gems:
   - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
 
 # mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-
 
 # Archives
 #  Type
