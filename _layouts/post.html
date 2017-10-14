@@ -1,19 +1,41 @@
 ---
 layout: default
 ---
-
-<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <div class="post-meta">
-      <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time> &#8226; <span class="post-meta__tags tags">{{page.tags}}</span>
+<article class="post">
+  <header> 
+    <div class="title">
+      <h2>{{ page.title | escape }}</h2>
+      <p><a href="//github.com/ViKapitoshka/blog/edit/master/{{ page.path }}" class="icon fa-edit">Редактировать на GitHub</a></p>
     </div>
-    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="meta">
+      <time class="published" datetime="{{ page.date }}">{{ page.date | date: "%d %b %Y %R" }}</time>
+      <a href="{{ site.author.cv }}" class="author"><span class="name">V.{{ site.author.last_name }}</span><img src="{{ site.author.avatar | prepend: site.baseurl }}" alt="ViKapitoshka" /></a>
+    </div>
   </header>
+  {{ content }}
+  
+  <p>Подписывайтесь на наш <a href="http://t.me/vikablog">канал</a> в телеграмме :)
+  <footer>
+    <ul class="stats">
+      <li><a href="{{ site.url }}" class="icon fa-folder">Главная</a></li>
+      <li><a href="//github.com/ViKapitoshka/blog/edit/master/{{ page.path }}" class="icon fa-edit">Edit</a></li>
+    </ul>
+  </footer>
 
-  <section class="post">
-    {{ content }}
-  </section>
+  {% include donate.html %}
+  
+</div>
 </article>
+<ul class="actions pagination">
+  {% if page.previous.url %}
+    <li><a href="{{page.previous.url}}" class="button big previous">Previous Page</a></li>
+  {% endif %}
+  {% if page.next.url %}
+    <li><a href="{{page.next.url}}" class="button big next">Next Page</a></li>
+  {% endif %}
+</ul>
 
-{% include read-more.html %}
-{% include comments.html %}
+
+{%include comments.html %}
+
+

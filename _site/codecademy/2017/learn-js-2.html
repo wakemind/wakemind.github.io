@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="keywords" content="codecademy, перевод, курс, javascript">
+  
+  <meta name="robots" content="all"/>
+  <meta name="author" content="Viktoriya Kapitonenko">
+  <meta name="description" content="Примечание Данная статья является переводом урока Variables из курса Introduction to JavaScript. Если появятся вопросы, обязательно пишите в комментариях. С ...">
+
+  
+  <title>Введение в JavaScript. Переменные. Codecademy на русском</title>
+  
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/codecademy/2017/learn-js-2.html">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <script src="/assets/js/jquery.min.js"></script>
+</head>
+
+
+  
+    <body class="single">
+  
+
+  <div class="toTop">
+    <li class="fa fa-angle-up"></li>  
+  </div>  
+
+
+    <div id="wrapper">
+
+    <!-- Header -->
+  <header id="header">
+    <h1><a href="/">Виктория Капитоненко</a></h1>
+    <nav class="links">
+      <ul>
+
+        
+          <li><a href="/javascript/">主题</a></li>
+        
+          <li><a href="/javascript/">技术</a></li>
+        
+          <li><a href="/life/">随笔</a></li>
+        
+          <li><a href="/codecademy/">联系</a></li>
+        
+        
+      </ul>
+
+    </nav>
+    <nav class="main">
+      <ul>
+        <li class="menu">
+          <a class="fa-bars" href="#menu">Menu</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Menu -->
+    <section id="menu">
+      <!-- Search -->
+      <section>
+        <ul class="links">
+          
+          
+          <li><a href="/javascript/"><h3>主题</h3></a></li>
+          
+          <li><a href="/javascript/"><h3>技术</h3></a></li>
+          
+          <li><a href="/life/"><h3>随笔</h3></a></li>
+          
+          <li><a href="/codecademy/"><h3>联系</h3></a></li>
+          
+          
+        </ul>
+      </section>
+    </section>
+  </header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div id="main">
+        <article class="post">
+  <header> 
+    <div class="title">
+      <h2>Введение в JavaScript. Переменные. Codecademy на русском</h2>
+      <p><a href="//github.com/ViKapitoshka/blog/edit/master/_posts/2017-09-15-learn-js-2.md" class="icon fa-edit">Редактировать на GitHub</a></p>
+    </div>
+    <div class="meta">
+      <time class="published" datetime="2017-09-15 18:05:00 +0800">15 Sep 2017 18:05</time>
+      <a href="//kaptn.ru" class="author"><span class="name">V.Kapitonenko</span><img src="/images/avatar.jpeg" alt="ViKapitoshka" /></a>
+    </div>
+  </header>
+  <h2 id="примечание">Примечание</h2>
+<p>Данная статья является переводом урока Variables из курса Introduction to JavaScript. Если появятся вопросы, обязательно пишите в комментариях. С радостью отвечу на все. Также принимаются замечания и предложения. <a href="https://www.codecademy.com/courses/learn-javascript-introduction/lessons/variables/exercises/intro-variables?action=lesson_resume&amp;course_redirect=introduction-to-javascript">Источник</a></p>
+
+<h2 id="variables">Variables</h2>
+<p>Программисты используют переменные, чтобы код был более понятен и мог изменяться.</p>
+
+<p>Представьте, что вы пишете приложение о погоде. Ваш термометр показывает температуру в Цельсиях, но ваша цель записывать температуру в градусах Фаренгейта.</p>
+
+<p>Вы пишите программу, которая принимает температуру в <kbd>15</kbd> градусов по Цельсию и вычисляет температуру по Фаренгейту.</p>
+
+<p>Как только программа была написана, вы увидели, что сейчас температура <kbd>16</kbd> градусов по Цельсию. Чтобы вычислить температуру по Фаренгейту, вам нужно написать новую программу, которая будет преобразует теперь <kbd>16</kbd> градусов по Цельсию в Фаренгейт.</p>
+
+<p>Вот тут-то и могут понадобиться переменные. Переменные позволяют нам назначать данным слово и использовать это слово, чтобы ссылаться на эти данные. Если они изменились (как градусы по Цельсию), мы можем заменить значение переменной, вместо того, чтобы заново перезаписывать программу.</p>
+
+<p>В этом уроке мы изучим два типа <em>переменных</em>: <kbd>let</kbd> и <kbd>const</kbd>.</p>
+
+<h3 id="инструкция">Инструкция</h3>
+<ol>
+  <li>
+    <p>Запустите ваш код.<br />
+Что произошло в консоли?</p>
+  </li>
+  <li>
+    <p>Добавьте внизу следующие строки кода в файл <strong>app.js</strong>:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>console.log(location);
+console.log(latitude);
+console.log(inNorthernHemisphere);
+</code></pre>
+    </div>
+    <p>Запустите ваш код и посмотрите в консоль. <br />
+Вы ожидали такой результат?</p>
+  </li>
+</ol>
+
+<h2 id="create-a-variable-const">Create a Variable: const</h2>
+<p>Давайте углубимся и посмотрим переменные в дикой природе. Вот как объявить переменную константу (постоянную переменную - прим.пер.):</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>const myName = 'Arya';
+console.log(myName);
+// Выведет: Arya
+</code></pre>
+</div>
+<p>Давайте рассмотрим этот пример:</p>
+<ol>
+  <li><kbd>const</kbd>, коротко от constant (константа), - это оператор (синтаксическая конструкция) в JavaScript, создающее новую переменную со значением, которое не может меняться.</li>
+  <li><kbd>myName</kbd> - это имя переменной. Заметьте, что слово не включает в себя пробелы, и мы увеличили регистр буквы N. В данном случае это общепринятый стандарт написания переменных в JavaScript, который называется camelCasing(“ВерблюжийРегистр” - прим.пер.), потому что заглавные буквы каждого слова выглядит как горбы верблюда. (вообще здесь используется lowerCamelCase, где внутри фразы с заглавной пишутся все слова, кроме первого - прим.пер.)</li>
+  <li><kbd>=</kbd> это оператор <em>присваивания</em>. Он присваивает значение (<kbd>'Arya'</kbd>) переменной (<kbd>myName</kbd>).</li>
+  <li><kbd>'Arya'</kbd> - это <em>значение</em>, которое присваивается (<kbd>=</kbd>) переменной <kbd>myName</kbd>.</li>
+</ol>
+
+<p>После того, как переменная была объявлена, мы можем вывести <kbd>'Arya'</kbd> в консоль: <kbd>console.log(myName)</kbd>.<br />
+Вы можете сохранить любые данные в переменные. Например, здесь мы сохранили числа:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>const myAge = 11;
+console.log(myAge);
+// Выведет: 11
+</code></pre>
+</div>
+<p>В данном примере, в первой строке мы установили значение переменной <kbd>myAge</kbd> <kbd>11</kbd>. Ниже, при помощи <kbd>console.log()</kbd>, мы вывели <kbd>11</kbd> в консоль.</p>
+
+<h3 id="инструкция-1">Инструкция</h3>
+<ol>
+  <li>Создайте константу с именем <kbd>entree</kbd> и строковым значением <kbd>'Enchiladas'</kbd>.</li>
+  <li>Теперь, под переменной <kbd>entree</kbd>, создайте константу с именем <kbd>price</kbd>, в которой будет сохранено число <kbd>12</kbd>.</li>
+  <li>После переменной <kbd>price</kbd>, используйте команду <kbd>console.log()</kbd>, чтобы вывести значение переменной <kbd>entree</kbd>.<br />
+На следующей строке выведете значение <kbd>price</kbd>.</li>
+  <li>Скопируйте и вставьте следующий код в вашу программу:<br />
+<code class="highlighter-rouge">entree = 'Tacos';</code><br />
+Как только вы запустите код, то консоль выдаст следующее сообщение об ошибке:<br />
+<code class="highlighter-rouge">TypeError: Assignment to constant variable.</code><br />
+Мы обсудим то, что произошло, в следующем упражнении.</li>
+</ol>
+
+<h2 id="create-a-variable-let">Create a Variable: let</h2>
+<p>В конце предыдущего упражения мы получили сообщение об ошибке:<br />
+<code class="highlighter-rouge">TypeError: Assignment to constant variable.</code></p>
+
+<p>JavaScript скинул ошибку, так как мы присвоили новое значение константе. Постоянные переменные, как и следует из их названия, постоянные - вы не можете присвоить им другое значение.</p>
+
+<p>Однако <em>переменные</em> с оператором <kbd>let</kbd> могут перезаписываться.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>let meal = 'Enchiladas';
+console.log(meal);
+meal = 'Tacos';
+console.log(meal);
+// выведет: Enchiladas
+// выведет: Tacos
+</code></pre>
+</div>
+<p>В вышеперечисленном примере, оператор <kbd>let</kbd> используется для создания переменной <kbd>meal</kbd> со строковым значением <kbd>'Enchiladas'</kbd>. В третьей строке, значение переменной <kbd>meal</kbd> меняется на <kbd>'Tacos'</kbd>.</p>
+
+<p>Возможно, вам интересно, когда использовать <kbd>const</kbd>, а когда <kbd>let</kbd>. В основном, используйте только <kbd>const</kbd>, если значение, сохранённое в переменной, не меняется в вашей программе.</p>
+
+<h3 id="инструкция-2">Инструкция</h3>
+<ol>
+  <li>Создайте переменную <kbd>changeMe</kbd> через <kbd>let</kbd> с булевым значением <kbd>true</kbd>.</li>
+  <li>Теперь, установите <kbd>changeMe</kbd> значение логическое <kbd>false</kbd>. Выведите значение <kbd>changeMe</kbd> в консоль.</li>
+</ol>
+
+<h2 id="undefined">Undefined</h2>
+<p>Что случиться, если мы создадим переменную, но не присвоим ей значение?</p>
+
+<p>JavaScript создаст пустрое значение переменной в памяти и установит его как <kbd>undefined</kbd>. <em>Undefined</em> - это пятый и последний из примитивных типов данных. JavaScript присваивает неопределённый тип данных к переменным, у которых нет значения.<br />
+<code class="highlighter-rouge">let whatAmI;</code><br />
+В данном примере, мы объявили переменную <kbd>whatAmI</kbd> без какого-либо значения. JavaScript установил данной переменной значение <kbd>undefined</kbd>.</p>
+
+<h3 id="инструкция-3">Инструкция</h3>
+<ol>
+  <li>Создайте переменную с именем <kbd>notDefined</kbd>, но не устанавливайте ей значение.<br />
+Выведите результат в консоль.</li>
+</ol>
+
+<p>2 Объявите переменнную <kbd>valueless</kbd>.<br />
+Выведите результат в консоль.</p>
+
+<h2 id="mathematical-assignment-operators">Mathematical Assignment Operators</h2>
+<p>В этом упражнении мы рассмотрим, как использовать переменные и математические операторы, чтобы вычислить новое значение и присвоить его к той же переменной. Посмотрите на пример ниже:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>let x = 4;
+x = x + 1;
+</code></pre>
+</div>
+<p>В данном примере, мы объявили переменную <kbd>x</kbd> со значением <kbd>4</kbd>. На следующей строке операция <kbd>x = x + 1</kbd> увеличивает <kbd>x</kbd> с четырёх на пять.</p>
+
+<p>Заметьте, что во второй строке для увеличения <kbd>x</kbd> на единицу мы написали <kbd>x</kbd> в правой и левой части оператора присваивания (<kbd>=</kbd>). Использование переменной дважды в одном выражении бывает запутанным и избыточным.</p>
+
+<p>Чтобы решить эту проблемы, в JavaScript есть набор встроенных <em>математических операторов присваивания</em>, которые позволяют легко вычислять новое значение и присваивать его к той же переменной без написанния её дважды. Посмотрите примеры этих операторов:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>let x = 4;
+x += 2; // x присваивается число 6
+
+let y = 4;
+y -= 2; // y присваивается число 2
+
+let z = 4;
+z *= 2; // z присваивается число 8
+
+let r = 4;
+r++; // r присваивается число 5
+
+let t = 4;
+t--; // t присваивается число 3
+</code></pre>
+</div>
+<p>В данном примере, эти операторы используется для вычисления нового значения и присвоения к той же переменной. Давайте рассмотрим первые три и последние два оператора отдельно:</p>
+
+<ol>
+  <li>Первых три оператора(<kbd>+=</kbd>, <kbd>-=</kbd>, and <kbd>*=</kbd>) выполняют математическую операцию(<kbd>+</kbd>, <kbd>-</kbd>, or <kbd>*</kbd>) с числом в правой части, а затем присваивают новое значение переменной.</li>
+  <li>Последние два оператора - это инкремент (<kbd>++</kbd>) and декремент (<kbd>--</kbd>). Эти операторы ответственны за увеличение и уменьшение числа на один, соответственно.</li>
+</ol>
+
+<h3 id="инструкция-4">Инструкция</h3>
+<ol>
+  <li>Используя назначенные математические операторы, прибавьте к переменной <kbd>molecule</kbd>kbd&gt; 16.</li>
+  <li>Используя назначенные математические операторы, умножьте значение переменной <kbd>particle</kbd> на <kbd>6.02</kbd> и присвойте результат той же переменной.</li>
+  <li>Используйте инкремент, чтобы увеличить значение переменной <kbd>assay</kbd> на <kbd>1</kbd>.</li>
+</ol>
+
+<h2 id="string-interpolation">String Interpolation</h2>
+<p>В предыдущих упражнениях мы переменным присваивали строки. Здесь вы узнаете, как вставлять содержимое, сохранённое в переменную, в строку.</p>
+
+<p>Термином в JavaScript, предназначенным для вставки в строку данных, сохраненных в переменную, является <em>строковая интерполяция</em>.</p>
+
+<p>Оператор <kbd>+</kbd>, который, как вы знаете, предназначен для сложения, также используется для интерполяции (вставки) переменной с типом string в строку следующим образом:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>let myPet = 'armadillo';
+console.log('I own a pet ' + myPet + '.'); 
+// Выведет: 'I own a pet armadillo.'
+</code></pre>
+</div>
+<p>В данном примере, мы сохранили значение <kbd>'armadillo'</kbd> в переменную <kbd>myPet</kbd>. Во второй строке, оператор <kbd>+</kbd> использовался для соединения трёх строковых: <kbd>I own a pet</kbd>, значения переменной <kbd>I own a pet</kbd> и <kbd>.</kbd>. Результат этой интерполяции в консоли выглядит так:<br />
+<code class="highlighter-rouge">I own a pet armadillo.</code></p>
+
+<h3 id="инструкция-5">Инструкция</h3>
+<ol>
+  <li>Создайте переменную <kbd>favoriteAnimal</kbd> со значением вашего любимого питомца.</li>
+  <li>Используя команду <kbd>console.log</kbd>, выведите: <kbd>'My favorite animal: Koala'</kbd>, только вместо <kbd>'Koala'</kbd> поместите вашу переменную <kbd>favoriteAnimal</kbd>.</li>
+</ol>
+
+<h2 id="string-interpolation-ii">String Interpolation II</h2>
+<p>В новой версии JavaScript (ES6) мы можем легко вставлять переменные в строки другим способом:</p>
+<ol>
+  <li>Вместо кавычек вокруг строки используйте обратные кавычки (этот символ обычно находится в верхней части клавиатуры, слева от клавиши <kbd>1</kbd> (или буква Ё - прим.пер.)).</li>
+  <li>Оберните переменную в символы <kbd>${myVariable}</kbd> в предложении. И нет необходимости в операторе <kbd>+</kbd>.</li>
+</ol>
+
+<p>В ES6 интерполяция строк намного легче, чем в предыдущем упражнении. С ES6 мы можем вставить переменные прямо в ваш текст.</p>
+
+<p>Это выглядит так:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>let myPet = 'armadillo'
+console.log(`I own a pet ${myPet}.`)
+// Выведет: 'I own a pet armadillo.'
+</code></pre>
+</div>
+<p>В приведенном выше примере, вся строка (всё предложение) окружена обратными кавычками (<kbd>`</kbd>), а переменная (<kbd>myPet</kbd>) заключена в символы <kbd>${}</kbd>. Полученная строка: <code class="highlighter-rouge">I own a pet armadillo.</code></p>
+
+<h3 id="инструкция-6">Инструкция</h3>
+<ol>
+  <li>Создайте переменную <kbd>myName</kbd> и присвойте ей своё имя.</li>
+  <li>Создайте переменнную <kbd>myCity</kbd> со значением вашего любимого города.</li>
+  <li>Используйте <kbd>${}</kbd> для интерполяции ваших переменных в предложении ниже. С помощью <kbd>console.log()</kbd> выведите предложение в консоль.<br />
+<code class="highlighter-rouge">My name is ИМЯ. My favorite city is ГОРОД.</code><br />
+Замените значения <kbd>ИМЯ</kbd> и <kbd>ГОРОД</kbd> на ваши переменные, <kbd>myName</kbd> и <kbd>myCity</kbd>.</li>
+</ol>
+
+<h2 id="review-variables">Review Variables</h2>
+<p>Отличная работа! Этот урок охватывал множество основополагающих навыков, которые вы часто будете использовать в своих будущих программах.</p>
+
+<p>Давайте рассмотрим, что мы узнали:</p>
+<ul>
+  <li>Переменные хранят повторно используемые данные в программе.</li>
+  <li>JavaScript выводит ошибку, если вы будете переназначать переменную <kbd>const</kbd>.</li>
+  <li>Вы можете переназначить переменную, созданную с помощью <kbd>let</kbd>.</li>
+  <li>Переменные, объявленные без значений, сохраняются со значением примитивного типа данных, <kbd>undefined</kbd>.</li>
+  <li>Математические операторы присваивания помогают легко вычислять новые значения и присваивать их тем же переменным.</li>
+  <li>Оператор <kbd>+</kbd> используется для интерполяции (объединения) множества строк.</li>
+  <li>В JavaScript ES6 обратные кавычки(`) и <kbd>${}</kbd> используются для интерполяции значений в одну строку.</li>
+</ul>
+
+  
+  <p>Подписывайтесь на наш <a href="http://t.me/vikablog">канал</a> в телеграмме :)
+  <footer>
+    <ul class="stats">
+      <li><a href="http://localhost:4000" class="icon fa-folder">Главная</a></li>
+      <li><a href="//github.com/ViKapitoshka/blog/edit/master/_posts/2017-09-15-learn-js-2.md" class="icon fa-edit">Edit</a></li>
+    </ul>
+  </footer>
+
+    <form method="post" action="#">
+    <div class="" style="float: left; width: 70px;">
+      <input type="text" name="demo-name" id="enter" value="10" placeholder="Сумма" />
+    </div>
+    <ul class="actions">
+      <li><a id="go_donate" style="height: 44px" href="https://money.yandex.ru/to/410013162271067/" class="button fit">Автору на чай</a></li>
+    </ul>
+  </form>
+  <script language="JavaScript">
+  $(function() {
+    var link = $('#go_donate');
+    var linkDefaultHref = link.attr("href");
+    link.attr("href", linkDefaultHref + $('#enter').attr("value"));
+    $('#enter').on('keyup', function() {              
+      link.attr("href", linkDefaultHref + $(this).val());
+    });
+  });
+</script>
+  
+</div>
+</article>
+<ul class="actions pagination">
+  
+    <li><a href="/codecademy/2017/learn-js.html" class="button big previous">Previous Page</a></li>
+  
+  
+</ul>
+
+
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 95375});
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/95375/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+<a href="http://hypercomments.com" rel = "nofollow" class="hc-link" title="comments widget">comments powered by HyperComments</a>
+
+
+        
+      </div>
+    </main>
+    
+     
+
+            <!-- Footer -->
+              <section id="footer">
+                <ul class="icons">
+                  <li><a href="mailto:vika@kaptn.ru" class="fa-envelope"><span class="label">Email</span></a></li>
+                  <li><a href="https://www.linkedin.com/in/vika-kapitonenko-32347b130/" class="fa-linkedin-square"><span class="label">LinkedIn</span></a></li>
+                  <li><a href="https://vk.com/id201664979" class="fa-vk"><span class="label">VK</span></a></li>
+                  <li><a href="https://github.com/ViKapitoshka" class="fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a href="https://telegram.me/vikapitoshka" class="fa-paper-plane"><span class="label">Telegram</span></a></li>                  
+                </ul>
+                <p class="copyright">&copy; Kapitonenko. Design: <a href="http://html5up.net">HTML5 UP</a>. Work on <a href="https://jekyllrb.com">Jekyll</a>.</p>
+
+        
+    </div>
+
+  </body>
+
+  <!-- Scripts -->
+      <script src="/assets/js/skel.min.js"></script>
+      <script src="/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="/assets/js/main.js"></script>
+      <script src="/assets/js/viewportchecker.js"></script>
+      <script src="/assets/js/transition.js"></script>
+      <script src="/assets/js/targetblank.js"></script>
+      <script src="/assets/js/animated.js"></script>
+      <script src="/assets/js/scrollTop.js"></script>
+
+      <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter44797624 = new Ya.Metrika({ id:44797624, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/44797624" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+</html>

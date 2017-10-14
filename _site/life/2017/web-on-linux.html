@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="keywords" content="linux, web-разработка, web, программы">
+  
+  <meta name="robots" content="all"/>
+  <meta name="author" content="Viktoriya Kapitonenko">
+  <meta name="description" content="Небольшое примечание Перед каждой установкой программы желательно обновлять пакеты: sudo apt-get update Редакторы Установим два редактора: Visual Studio Code...">
+
+  
+  <title>Установки на Linux для Web-разработки. Заметки</title>
+  
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/life/2017/web-on-linux.html">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <script src="/assets/js/jquery.min.js"></script>
+</head>
+
+
+  
+    <body class="single">
+  
+
+  <div class="toTop">
+    <li class="fa fa-angle-up"></li>  
+  </div>  
+
+
+    <div id="wrapper">
+
+    <!-- Header -->
+  <header id="header">
+    <h1><a href="/">Виктория Капитоненко</a></h1>
+    <nav class="links">
+      <ul>
+
+        
+          <li><a href="/javascript/">主题</a></li>
+        
+          <li><a href="/javascript/">技术</a></li>
+        
+          <li><a href="/life/">随笔</a></li>
+        
+          <li><a href="/codecademy/">联系</a></li>
+        
+        
+      </ul>
+
+    </nav>
+    <nav class="main">
+      <ul>
+        <li class="menu">
+          <a class="fa-bars" href="#menu">Menu</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Menu -->
+    <section id="menu">
+      <!-- Search -->
+      <section>
+        <ul class="links">
+          
+          
+          <li><a href="/javascript/"><h3>主题</h3></a></li>
+          
+          <li><a href="/javascript/"><h3>技术</h3></a></li>
+          
+          <li><a href="/life/"><h3>随笔</h3></a></li>
+          
+          <li><a href="/codecademy/"><h3>联系</h3></a></li>
+          
+          
+        </ul>
+      </section>
+    </section>
+  </header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div id="main">
+        <article class="post">
+  <header> 
+    <div class="title">
+      <h2>Установки на Linux для Web-разработки. Заметки</h2>
+      <p><a href="//github.com/ViKapitoshka/blog/edit/master/_posts/2017-06-27-web-on-linux.md" class="icon fa-edit">Редактировать на GitHub</a></p>
+    </div>
+    <div class="meta">
+      <time class="published" datetime="2017-06-27 16:00:00 +0800">27 Jun 2017 16:00</time>
+      <a href="//kaptn.ru" class="author"><span class="name">V.Kapitonenko</span><img src="/images/avatar.jpeg" alt="ViKapitoshka" /></a>
+    </div>
+  </header>
+  <h2 id="небольшое-примечание">Небольшое примечание</h2>
+<p>Перед каждой установкой программы желательно обновлять пакеты:<br />
+<code class="highlighter-rouge">sudo apt-get update</code></p>
+<h2 id="редакторы">Редакторы</h2>
+<ul>
+  <li>Установим два редактора:<br />
+Visual Studio Code:
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install ubuntu-make 
+umake ide visual-studio-code
+</code></pre>
+    </div>
+    <p>… и Sublime Text:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo add-apt-repository ppa:webupd8team/sublime-text-3  
+sudo apt-get install sublime-text-installer
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="git">Git</h2>
+<ul>
+  <li>Устанавливаем git, если не установлен и генирируем ssh-ключ для работы с репозиторием:
+    <div class="highlighter-rouge"><pre class="highlight"><code>ssh-keygen -t rsa -b 4096  
+cat ~/.ssh/id_rsa.pub
+</code></pre>
+    </div>
+    <p>Ключ копируем и вставляем <a href="https://github.com/settings/keys">сюда</a>.<br />
+И запускаем ssh-agent:<br />
+<code class="highlighter-rouge">eval "$(ssh-agent -s)"</code><br />
+Теперь можно работать с репозиториями.</p>
+  </li>
+</ul>
+
+<h2 id="сервер">Сервер</h2>
+<p>Для сервера будем использовать стек LEMP (Linux, Nginx, MySQL и PHP).</p>
+<ul>
+  <li>Установим Nginx:<br />
+<code class="highlighter-rouge">sudo apt-get install nginx</code><br />
+Запускается он автоматически, поэтому зайдя на <a href="//localhost">localhost</a> вы увидете страницу от Nginx.<br />
+По умолчанию сайты находятся в папке /usr/share/nginx/html. Если нужно поменять путь, то в файле конфигурации, /etc/nginx/sites-available/default.conf, нужно найти и изменить строчку: <code class="highlighter-rouge">root /usr/share/nginx/html;</code> на нужный нам путь.</li>
+  <li>Установим MySQL:<br />
+<code class="highlighter-rouge">sudo apt-get install mysql-server</code></li>
+  <li>Установим PHP:<br />
+<code class="highlighter-rouge">sudo apt-get install php php-cli php-fpm php-mysql</code><br />
+Теперь нам необходимо изменить одну из настроек в файле конфигурации PHP, для чего откроем файл “php.ini”
+Находим параметр “cgi.fix_pathinfo”, убираем символ комментария в начале строки (“;”) и установливаем значение параметра 0, чтобы в результате получилось:<br />
+<code class="highlighter-rouge">cgi.fix_pathinfo=0</code><br />
+Перезапускаем процесс PHP:<br />
+<code class="highlighter-rouge">sudo systemctl restart php7.0-fpm</code></li>
+  <li>Настроим Nginx для работы с PHP:<br />
+Добавим в директиву “index” значение “index.php” первым в списке (чтобы PHP файлы имели приоритет в обработке веб-сервером перед HTML):
+    <div class="highlighter-rouge"><pre class="highlight"><code>root /var/www/html;
+index index.php index.html index.htm index.nginx-debian.html;
+</code></pre>
+    </div>
+    <p>Установим директиву “server_name” в значение IP адреса или доменного имени нашего сервера:<br />
+<code class="highlighter-rouge">server_name server_domain_or_IP;</code>
+Раскомментировать секцию, которая описывает настройки обработки PHP и блок location для файлов .htaccess. Сервер Nginx не обрабатывает эти файлы; если один из этих файлов попадёт в document root, его нельзя отображать клиентам. Вот, что должно получиться в итоге:</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>location ~ \.php$ {
+  include snippets/fastcgi-php.conf;
+  fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+}
+location ~ /\.ht {
+  deny all;
+}
+</code></pre>
+    </div>
+    <p>После проверим файл на наличии ошибок:<br />
+<code class="highlighter-rouge">nginx -t</code><br />
+и перезагрузим nginx:<br />
+<code class="highlighter-rouge">nginx -s reload</code></p>
+  </li>
+  <li>Тестирование<br />
+В папке для сайтов создаём php-файл со строкой:<br />
+<code class="highlighter-rouge">&lt;?php phpinfo();</code><br />
+и открываем его в браузере. Если появляется страница, содержащую информацию о сервере, значит nginx обслуживает файлы PHP. Теперь можно удалить этот файл и продолжить работать.</li>
+  <li>WordPress<br />
+Для работы с WordPress нужно настроить MySQL. 
+Зайдём через root-пользователя:<br />
+<code class="highlighter-rouge">mysql -uroot -p</code><br />
+Создадим базу данных:<br />
+<code class="highlighter-rouge">CREATE DATABASE wordpress;</code><br />
+Создадим нового пользователя:<br />
+<code class="highlighter-rouge">CREATE USER 'user'@'localhost' IDENTIFIED BY 'testpass';</code><br />
+Предоставим пользователю полный доступ к базе данных:<br />
+<code class="highlighter-rouge">GRANT ALL PRIVILEGES ON blog . * TO 'user'@'localhost';</code><br />
+Сбрасываем привилегии:<br />
+<code class="highlighter-rouge">FLUSH PRIVILEGES;</code><br />
+Далее скачиваем WordPress и помещаем его в папке сайта. В файле wp-config.php изменяем параметры MySQL на только что настроенные:
+    <div class="highlighter-rouge"><pre class="highlight"><code>define('DB_NAME', 'wordpress');
+define('DB_USER', 'user');
+define('DB_PASSWORD', 'testpass');
+define('DB_HOST', 'localhost');
+</code></pre>
+    </div>
+    <p>Открываем в браузере wp-activate.php и следуем по инструкции.</p>
+  </li>
+</ul>
+
+<h2 id="sass">Sass</h2>
+<ul>
+  <li>Установим Ruby, а далее и Sass:
+    <div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install ruby
+sudo gem install sass
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="gulp">Gulp</h2>
+<ul>
+  <li>Для начала нужно устрановить node.js:<br />
+<code class="highlighter-rouge">sudo apt-get install nodejs</code><br />
+На всякий случай, можно проверить версию:<br />
+<code class="highlighter-rouge">nodejs -v</code></li>
+  <li>Далее установим сборщик пакетов, npm:<br />
+<code class="highlighter-rouge">sudo apt-get install npm</code><br />
+Проверить версию можно также, как и у node.js.</li>
+  <li>Далее установим Gulp.<br />
+<code class="highlighter-rouge">npm install --global gulp</code><br />
+В данном случае мы установили Gulp глобально, то есть его можно использовать в любом месте системы. Чтобы установить его только в папке разработки можно использовать команду:<br />
+<code class="highlighter-rouge">npm install --save-dev gulp</code></li>
+  <li>Создаём проект:<br />
+<code class="highlighter-rouge">nmp init</code><br />
+Настройки проекта будут находиться в файле package.json</li>
+  <li>Проверяем работу. В файле gulpfile.js пишем следующий код:
+    <div class="highlighter-rouge"><pre class="highlight"><code>gulp.task('hello', function() {
+  console.log('Hello, World!');
+});
+</code></pre>
+    </div>
+    <p>И в терминале запускаем его:<br />
+<code class="highlighter-rouge">gulp hello</code><br />
+В результате должны увидеть фразу “Hello, World!”.</p>
+  </li>
+</ul>
+
+<h2 id="jekyll">Jekyll</h2>
+<ul>
+  <li>Устанавливаем павкет ruby и ruby-dev для разработки:<br />
+<code class="highlighter-rouge">sudo apt-get install ruby ruby-dev</code></li>
+  <li>Далее устанавливаем Jekyll и Bundler:<br />
+<code class="highlighter-rouge">sudo gem install jekyll bundler</code></li>
+  <li>Переходим в папку с готовым Jekyll-сайтом и запускаем сервер:<br />
+<code class="highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li>И переходим на <a href="//localhost:4000">localhost:4000</a>.</li>
+  <li>Если нужно начать новый проект, то используем команду:<br />
+<code class="highlighter-rouge">jekyll new название_проекта</code></li>
+  <li>И также переходим в папку “название_проекта” и запускаем сервер.</li>
+</ul>
+
+<h2 id="react-js">React JS</h2>
+<p>Для работы с реактом, должны быть <a href="#gulp">установлены</a> NodeJS и npm</p>
+<ul>
+  <li>Установим create-react-app:<br />
+<code class="highlighter-rouge">sudo npm install -g create-react-app</code></li>
+  <li>Инициализируем проект:<br />
+<code class="highlighter-rouge">create-react-app my-app</code></li>
+  <li>Переходим в папку my-app и запускаем проект в режиме разработки:<br />
+<code class="highlighter-rouge">npm start</code><br />
+Суть в том, что страница <a href="//localhost:3000">localhost:3000</a> будет перезагружаться как только будут произведены какие-либо изменения в файлах.</li>
+</ul>
+
+  
+  <p>Подписывайтесь на наш <a href="http://t.me/vikablog">канал</a> в телеграмме :)
+  <footer>
+    <ul class="stats">
+      <li><a href="http://localhost:4000" class="icon fa-folder">Главная</a></li>
+      <li><a href="//github.com/ViKapitoshka/blog/edit/master/_posts/2017-06-27-web-on-linux.md" class="icon fa-edit">Edit</a></li>
+    </ul>
+  </footer>
+
+    <form method="post" action="#">
+    <div class="" style="float: left; width: 70px;">
+      <input type="text" name="demo-name" id="enter" value="10" placeholder="Сумма" />
+    </div>
+    <ul class="actions">
+      <li><a id="go_donate" style="height: 44px" href="https://money.yandex.ru/to/410013162271067/" class="button fit">Автору на чай</a></li>
+    </ul>
+  </form>
+  <script language="JavaScript">
+  $(function() {
+    var link = $('#go_donate');
+    var linkDefaultHref = link.attr("href");
+    link.attr("href", linkDefaultHref + $('#enter').attr("value"));
+    $('#enter').on('keyup', function() {              
+      link.attr("href", linkDefaultHref + $(this).val());
+    });
+  });
+</script>
+  
+</div>
+</article>
+<ul class="actions pagination">
+  
+    <li><a href="/codecademy/2017/learn-git4.html" class="button big previous">Previous Page</a></li>
+  
+  
+    <li><a href="/codecademy/2017/learn-js.html" class="button big next">Next Page</a></li>
+  
+</ul>
+
+
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 95375});
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/95375/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+<a href="http://hypercomments.com" rel = "nofollow" class="hc-link" title="comments widget">comments powered by HyperComments</a>
+
+
+        
+      </div>
+    </main>
+    
+     
+
+            <!-- Footer -->
+              <section id="footer">
+                <ul class="icons">
+                  <li><a href="mailto:vika@kaptn.ru" class="fa-envelope"><span class="label">Email</span></a></li>
+                  <li><a href="https://www.linkedin.com/in/vika-kapitonenko-32347b130/" class="fa-linkedin-square"><span class="label">LinkedIn</span></a></li>
+                  <li><a href="https://vk.com/id201664979" class="fa-vk"><span class="label">VK</span></a></li>
+                  <li><a href="https://github.com/ViKapitoshka" class="fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a href="https://telegram.me/vikapitoshka" class="fa-paper-plane"><span class="label">Telegram</span></a></li>                  
+                </ul>
+                <p class="copyright">&copy; Kapitonenko. Design: <a href="http://html5up.net">HTML5 UP</a>. Work on <a href="https://jekyllrb.com">Jekyll</a>.</p>
+
+        
+    </div>
+
+  </body>
+
+  <!-- Scripts -->
+      <script src="/assets/js/skel.min.js"></script>
+      <script src="/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="/assets/js/main.js"></script>
+      <script src="/assets/js/viewportchecker.js"></script>
+      <script src="/assets/js/transition.js"></script>
+      <script src="/assets/js/targetblank.js"></script>
+      <script src="/assets/js/animated.js"></script>
+      <script src="/assets/js/scrollTop.js"></script>
+
+      <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter44797624 = new Ya.Metrika({ id:44797624, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/44797624" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+</html>

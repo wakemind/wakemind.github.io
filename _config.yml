@@ -1,47 +1,46 @@
-# Basic
-title: 元学习的网志
-subtitle: 书写的洞穴，透见光
-welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Theme</a>
-description: 演化的道路，一寸一厘，皆有欢喜.
-creator: <a href="http://onev.cat">@onevcat</a>
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-url: "http://vno.onevcat.com"
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+# ////////////////
+# blog 源码地址：https://github.com/vikapitoshka/blog
 
-permalink: /:year/:month/:title/
+title: 元研究的网志
 
-# Format
-highlighter: rouge
+description: > # this means to ignore newlines until "baseurl:"
+  Блог Виктории Капитоненко. Нужен для сохранения информации, полезной лично для меня, но которая обычно забывается.<br>
+  Сайт написан на Jekyll и использует GitHub Pages.<br>
+  Блог с открытым исходным кодом размещен на <a href="//github.com/ViKapitoshka/blog">github</a>.<br>
+  Патчи, предложения и комментарии приветствуются.<br>
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.kaptn.ru" # the base hostname & protocol for your site, e.g. http://example.com
 
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: blue
 
-# The blog button should not be removed.
-blog_button:
-    title: 博客
-    description: Visit blog
+author:
+  name: 'Viktoriya Kapitonenko'
+  last_name: 'Kapitonenko'
+  cv: '//kaptn.ru'
+  avatar: '/images/avatar.jpeg'
+  github_username:  ViKapitoshka  
+  email: vika@kaptn.ru
+  vk_id: id201664979
+  telegram_name: vikapitoshka 
+  logo: '/images/logo.svg'
 
-# Navigation buttons in the front page.
-nav:
-    - {title: 源头, description: My Projects, url: 'http://www.yangzhiping.com'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
+# Build settings
+markdown: kramdown
 
-# Pagination
-gems: [jekyll-paginate]
-paginate: 10
-paginate_path: "page/:num/"
+permalink: /:categories/:year/:title.html
 
-# Comment
-comment:
-    disqus: vno-jekyll
-    # duoshuo: 
-    
-# Social
-social:
-    github: dumbWell
-    twitter: Isolated1984
-    mail: pch19910401@gmail.com
 
-# Google Analytics
-ga:
-    # id: your_ga_id
-    # host: your_host

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="keywords" content="github, домен, сайт, dns-настройка">
+  
+  <meta name="robots" content="all"/>
+  <meta name="author" content="Viktoriya Kapitonenko">
+  <meta name="description" content="Данный цикл статей посвящён созданию сайта на GitHub и его оптимизации. Итак, мы купили домен и решили выложить пару сайтов, а денег нет. Что делать? Как изв...">
+
+  
+  <title>Привязка домена к репозиторию с GitHub-pages</title>
+  
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/life/2017/site-on-github.html">
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <script src="/assets/js/jquery.min.js"></script>
+</head>
+
+
+  
+    <body class="single">
+  
+
+  <div class="toTop">
+    <li class="fa fa-angle-up"></li>  
+  </div>  
+
+
+    <div id="wrapper">
+
+    <!-- Header -->
+  <header id="header">
+    <h1><a href="/">Виктория Капитоненко</a></h1>
+    <nav class="links">
+      <ul>
+
+        
+          <li><a href="/javascript/">主题</a></li>
+        
+          <li><a href="/javascript/">技术</a></li>
+        
+          <li><a href="/life/">随笔</a></li>
+        
+          <li><a href="/codecademy/">联系</a></li>
+        
+        
+      </ul>
+
+    </nav>
+    <nav class="main">
+      <ul>
+        <li class="menu">
+          <a class="fa-bars" href="#menu">Menu</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Menu -->
+    <section id="menu">
+      <!-- Search -->
+      <section>
+        <ul class="links">
+          
+          
+          <li><a href="/javascript/"><h3>主题</h3></a></li>
+          
+          <li><a href="/javascript/"><h3>技术</h3></a></li>
+          
+          <li><a href="/life/"><h3>随笔</h3></a></li>
+          
+          <li><a href="/codecademy/"><h3>联系</h3></a></li>
+          
+          
+        </ul>
+      </section>
+    </section>
+  </header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div id="main">
+        <article class="post">
+  <header> 
+    <div class="title">
+      <h2>Привязка домена к репозиторию с GitHub-pages</h2>
+      <p><a href="//github.com/ViKapitoshka/blog/edit/master/_posts/2017-03-20-site-on-github.md" class="icon fa-edit">Редактировать на GitHub</a></p>
+    </div>
+    <div class="meta">
+      <time class="published" datetime="2017-03-20 17:00:00 +0300">20 Mar 2017 17:00</time>
+      <a href="//kaptn.ru" class="author"><span class="name">V.Kapitonenko</span><img src="/images/avatar.jpeg" alt="ViKapitoshka" /></a>
+    </div>
+  </header>
+  <p>Данный цикл статей посвящён созданию сайта на <a href="//github.com">GitHub</a> и его оптимизации.</p>
+<p>Итак, мы купили домен и решили выложить пару сайтов, а денег нет. Что делать? Как известно, <a href="//github.com">GitHub</a> даёт бесплатный хостинг для статических сайтов, а также даёт избежать кода на стороне сервера. Причём ограничений на объём никаких нет.</p>
+<p>Сегодня мы попробуем создать простой лендинг и привязать его к домену.</p>
+<ol>
+	<li>Создаём репозиторий, называем YOUR-USERNAME.github.io. В данном случае у нас vikapitoshka.github.io.<img class="image featured" src="/post-img/life/1.png" /></li>
+	<li>Создаём простую страничку со стилями:<img class="image featured" src="/post-img/life/2.png" /></li>
+	<li>Далее пишем CNAME-запись в репозитории, где будет записан адрес нашего сайта:
+	<img class="image featured" src="/post-img/life/3.png" /></li>
+	<li>Переходим на настройки репозитория, находим блок GitHub Pages и включаем Source. Я выбрала ветку master. <img class="image featured" src="/post-img/life/4.png" /> На этом пока работа с GitHub закончена. </li>
+	<li>Приступим к настройке DNS-зоны. Небольшое прмечание: бывают такие регистраторы, которые не предоставляют настройку DNS-зоны, только NS-записи. Таким регистратором является fozzy.com. Чтобы настроить DNS-зону, можно делегировать права на <a href="http://cloudflare.com">CloudFlare</a> и настраивать записи через него. Так и сделаем.
+Во-первых, добавим две A-записи на два адреса: <code>192.30.252.153</code> и <code>192.30.252.154</code>. Во-вторых, добавим CNAME-запись на www со значением YOUR-USERNAME.github.io. Вот какие записи мы получили:<img class="image featured" src="/post-img/life/5.png" />
+</li>
+	<li>Теперь осталось подождать, когда DNS-записи вступят в силу, обычно нужно ждать до 24 часов. Можно перейти в настройки репозитория GitHub, где мы увидим следующее: <img class="image featured" src="/post-img/life/6.png" /><strong>Примечание.</strong> Если у вас есть другие репозитории в качестве github-pages, то ссылка на сайт будет в виде: ваш-домен/название-репозитория даже без CNAME-файла в каждом из репозиториев.<a href="//kaptn.ru/example-gh-pages">Пример.</a></li>
+</ol>
+<p>Пока на этом всё, <a href="//github.com/ViKapitoshka/vikapitoshka.github.io">здесь</a> вы можете посмотреть исходный код. В <a href="//blog.kaptn.ru/life/2017/subdomen.html">следующей статье</a> создадим субдомен сайта.</p>
+
+  
+  <p>Подписывайтесь на наш <a href="http://t.me/vikablog">канал</a> в телеграмме :)
+  <footer>
+    <ul class="stats">
+      <li><a href="http://localhost:4000" class="icon fa-folder">Главная</a></li>
+      <li><a href="//github.com/ViKapitoshka/blog/edit/master/_posts/2017-03-20-site-on-github.md" class="icon fa-edit">Edit</a></li>
+    </ul>
+  </footer>
+
+    <form method="post" action="#">
+    <div class="" style="float: left; width: 70px;">
+      <input type="text" name="demo-name" id="enter" value="10" placeholder="Сумма" />
+    </div>
+    <ul class="actions">
+      <li><a id="go_donate" style="height: 44px" href="https://money.yandex.ru/to/410013162271067/" class="button fit">Автору на чай</a></li>
+    </ul>
+  </form>
+  <script language="JavaScript">
+  $(function() {
+    var link = $('#go_donate');
+    var linkDefaultHref = link.attr("href");
+    link.attr("href", linkDefaultHref + $('#enter').attr("value"));
+    $('#enter').on('keyup', function() {              
+      link.attr("href", linkDefaultHref + $(this).val());
+    });
+  });
+</script>
+  
+</div>
+</article>
+<ul class="actions pagination">
+  
+    <li><a href="/life/2017/cdn-github.html" class="button big previous">Previous Page</a></li>
+  
+  
+    <li><a href="/life/2017/subdomen.html" class="button big next">Next Page</a></li>
+  
+</ul>
+
+
+<div id="hypercomments_widget"></div>
+<script type="text/javascript">
+_hcwp = window._hcwp || [];
+_hcwp.push({widget:"Stream", widget_id: 95375});
+(function() {
+if("HC_LOAD_INIT" in window)return;
+HC_LOAD_INIT = true;
+var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/95375/"+lang+"/widget.js";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hcc, s.nextSibling);
+})();
+</script>
+<a href="http://hypercomments.com" rel = "nofollow" class="hc-link" title="comments widget">comments powered by HyperComments</a>
+
+
+        
+      </div>
+    </main>
+    
+     
+
+            <!-- Footer -->
+              <section id="footer">
+                <ul class="icons">
+                  <li><a href="mailto:vika@kaptn.ru" class="fa-envelope"><span class="label">Email</span></a></li>
+                  <li><a href="https://www.linkedin.com/in/vika-kapitonenko-32347b130/" class="fa-linkedin-square"><span class="label">LinkedIn</span></a></li>
+                  <li><a href="https://vk.com/id201664979" class="fa-vk"><span class="label">VK</span></a></li>
+                  <li><a href="https://github.com/ViKapitoshka" class="fa-github"><span class="label">GitHub</span></a></li>
+                  <li><a href="https://telegram.me/vikapitoshka" class="fa-paper-plane"><span class="label">Telegram</span></a></li>                  
+                </ul>
+                <p class="copyright">&copy; Kapitonenko. Design: <a href="http://html5up.net">HTML5 UP</a>. Work on <a href="https://jekyllrb.com">Jekyll</a>.</p>
+
+        
+    </div>
+
+  </body>
+
+  <!-- Scripts -->
+      <script src="/assets/js/skel.min.js"></script>
+      <script src="/assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="/assets/js/main.js"></script>
+      <script src="/assets/js/viewportchecker.js"></script>
+      <script src="/assets/js/transition.js"></script>
+      <script src="/assets/js/targetblank.js"></script>
+      <script src="/assets/js/animated.js"></script>
+      <script src="/assets/js/scrollTop.js"></script>
+
+      <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter44797624 = new Ya.Metrika({ id:44797624, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/44797624" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+</html>
