@@ -1,63 +1,47 @@
-# Site settings
-title: Isolated Joker
-header-img: "img/facebook.jpg"
-tagline: "cn"  
-description: "乔书亚|追寻文字之美"  
-baseurl: ""
-url: "http://isolatedj.com"  
+# Basic
+title: dumbWell
+subtitle: 书写的洞穴，透见光
+welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Theme</a>
+description: 演化的道路，一寸一厘，皆有欢喜.
+creator: <a href="http://onev.cat">@onevcat</a>
 
-# About/contact
-owner: 
-  name: " Isolated Joker"
-  email: isolatedj@yahoo.com
-  bio: "千里之行，始于足下"
+url: "http://vno.onevcat.com"
 
-# Data
-gavatar: http://dreamofbook.qiniudn.com/Az..png
-favicon: img/favicon.png
+permalink: /:year/:month/:title/
 
-douban_username:  isolatedj
-twitter_username: isolatedj
-github_username: isolatedj
-facebook_username: isolatedj
-weibo_username: isolatedj 
-zhihu_username: isolatedj
+# Format
+highlighter: rouge
 
-# Build settings  
-# use Github Flavored Markdown !important  
-# document: http://jekyllrb.com/docs/configuration/#kramdown  
-markdown: kramdown
-rouge: pygments
-permalink: pretty
-paginate: 8
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: blue
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone: Asia/Shanghai
+# The blog button should not be removed.
+blog_button:
+    title: 博客
+    description: Visit blog
 
-# Defaults for posts
-defaults:
-  -
-    scope: 
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "IsolatedJ"
-      header-img: "img/facebook.jpg" # We don't want posts without a header image, that whould mean white on white
+# Navigation buttons in the front page.
+nav:
+    - {title: 源头, description: My Projects, url: 'http://www.yangzhiping.com'}
+    # - {title: Another Button, description: A button, url: 'http://example.com'}
 
-# Comments 
-comments :
-  provider : duoshuo
-  duoshuo :
-    short_name : isolatedj
-  disqus :
-      short_name : isolatedj
+# Pagination
+gems: [jekyll-paginate]
+paginate: 10
+paginate_path: "page/:num/"
 
-# Analytics and webmaster tools stuff goes here
-google_analytics: 
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+# Comment
+comment:
+    disqus: vno-jekyll
+    # duoshuo: 
+    
+# Social
+social:
+    github: dumbWell
+    twitter: Isolated1984
+    mail: pch19910401@gmail.com
 
-# Links to include in footer navigation
+# Google Analytics
+ga:
+    # id: your_ga_id
+    # host: your_host
