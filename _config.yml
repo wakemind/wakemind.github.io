@@ -28,13 +28,11 @@ url: "https://blog.kaptn.ru" # the base hostname & protocol for your site, e.g. 
 
 
 author:
-  name: 'Viktoriya Kapitonenko'
-  last_name: 'Kapitonenko'
-  cv: '//kaptn.ru'
+  name: '元研究'
+  last_name: 'yuanyanjiu'
   avatar: '/images/avatar.jpeg'
-  github_username:  ViKapitoshka  
-  email: vika@kaptn.ru
-  vk_id: id201664979
+  github_username:  wakemind  
+  email: 245465151@qq.com
   telegram_name: vikapitoshka 
   logo: '/images/logo.svg'
 

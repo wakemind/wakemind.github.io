@@ -1,69 +1,25 @@
 /*
-Error: Undefined mixin 'vendor'.
-        on line 24 of _post.scss, in `vendor'
-        from line 24 of _post.scss
+Error: Invalid US-ASCII character "\xE9"
+        on line 256 of _post.scss
 
-19: 		//border: solid 1px _palette(border);
-20: 		margin: 0 0 _size(section-spacing) 0;
-21: 		position: relative;
-22: 
-23: 		> header {
-24: 			@include vendor('display', 'flex');
-25: 			//border-bottom: solid 1px _palette(border);
-26: 			left: (_size(section-spacing) * -1);
-27: 			margin: (_size(section-spacing) * -1) 0 _size(section-spacing) 0;
-28: 			position: relative;
-29: 			width: calc(100% + #{_size(section-spacing) * 2});
+251: 				}
+252: 			}
+253: 		}
+254: 	}
+255: 	
+256: // 隐藏评论里的附件按钮
+257: .hc__reply__clip,.hc__footer{display:none}
 
 Backtrace:
-_post.scss:24:in `vendor'
-_post.scss:24
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:98:in `block in with_mixin'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:98:in `with_mixin'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:161:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+_post.scss:256
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/util.rb:1325:in `rescue in block in find_encoding_error'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/util.rb:1322:in `block in find_encoding_error'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/util.rb:1321:in `each'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/util.rb:1321:in `each_with_index'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/util.rb:1321:in `find_encoding_error'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/util.rb:930:in `check_sass_encoding'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/engine.rb:439:in `check_encoding!'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/engine.rb:395:in `_to_tree'
 /Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/engine.rb:384:in `_render_with_sourcemap'
 /Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/engine.rb:301:in `render_with_sourcemap'
 /Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:391:in `run'
@@ -75,4 +31,4 @@ _post.scss:24
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'vendor'.\A         on line 24 of _post.scss, in `vendor'\A         from line 24 of _post.scss\A \A 19: 		//border: solid 1px _palette(border);\A 20: 		margin: 0 0 _size(section-spacing) 0;\A 21: 		position: relative;\A 22: \A 23: 		> header {\A 24: 			@include vendor('display', 'flex');\A 25: 			//border-bottom: solid 1px _palette(border);\A 26: 			left: (_size(section-spacing) * -1);\A 27: 			margin: (_size(section-spacing) * -1) 0 _size(section-spacing) 0;\A 28: 			position: relative;\A 29: 			width: calc(100% + #{_size(section-spacing) * 2});"; }
+  content: "Error: Invalid US-ASCII character \"\xE9\"\A         on line 256 of _post.scss\A \A 251: 				}\A 252: 			}\A 253: 		}\A 254: 	}\A 255: 	\A 256: // 隐藏评论里的附件按钮\A 257: .hc__reply__clip,.hc__footer{display:none}"; }

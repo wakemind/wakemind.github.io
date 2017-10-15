@@ -2141,6 +2141,9 @@ dl {
           margin: 0 0 0 1.25em;
           padding: 0 0 0 1.25em; } }
 
+.hc__reply__clip, .hc__footer {
+  display: none; }
+
 /* Section/Article */
 section.special, article.special {
   text-align: center; }
@@ -2245,15 +2248,14 @@ body {
     height: 160px;
     position: absolute;
     top: -1em;
-    margin-left: -5.3em; }
+    margin-left: -5.8em; }
   #header a {
     color: inherit;
     text-decoration: none; }
   #header ul {
     list-style: none;
     margin: 0;
-    padding-left: 0;
-    text-align: right; }
+    padding-left: 5em; }
     #header ul li {
       display: inline-block;
       padding-left: 0; }
@@ -2487,7 +2489,8 @@ body {
 #footer .copyright {
   color: #aaaaaa;
   font-family: "Raleway", Helvetica, sans-serif;
-  font-size: 0.5em;
+  font-size: 0.8em;
+  padding: 0.5em;
   font-weight: 400;
   letter-spacing: 0.25em;
   text-transform: uppercase; }
