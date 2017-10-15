@@ -1,23 +1,23 @@
 /*
 Error: Undefined mixin 'vendor'.
-        on line 14 of _header.scss, in `vendor'
-        from line 14 of _header.scss
+        on line 16 of _header.scss, in `vendor'
+        from line 16 of _header.scss
 
-9: 	body {
-10: 		padding-top: 3.5em;
-11: 	}
+11: }
 12: 
-13: 	#header {
-14: 		@include vendor('display', 'flex');
-15: 		@include vendor('justify-content', 'space-between');
-16: 		background-color: _palette(bg);
-17: 		border-bottom: solid 1px _palette(border);
-18: 		height: 5em;
-19: 		left: 0;
+13: #header {
+14:     
+15:     
+16:     @include vendor('display', 'flex');
+17:     @include vendor('justify-content', 'space-between');
+18:     background-color: _palette(bg);
+19:     box-shadow: 0 0 4px rgba(111, 110, 110, 0.2);
+20:     height: 4.5em;
+21:     left: 0;
 
 Backtrace:
-_header.scss:14:in `vendor'
-_header.scss:14
+_header.scss:16:in `vendor'
+_header.scss:16
 /Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 /Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:98:in `block in with_mixin'
 /Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
@@ -64,4 +64,4 @@ _header.scss:14
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'vendor'.\A         on line 14 of _header.scss, in `vendor'\A         from line 14 of _header.scss\A \A 9: 	body {\A 10: 		padding-top: 3.5em;\A 11: 	}\A 12: \A 13: 	#header {\A 14: 		@include vendor('display', 'flex');\A 15: 		@include vendor('justify-content', 'space-between');\A 16: 		background-color: _palette(bg);\A 17: 		border-bottom: solid 1px _palette(border);\A 18: 		height: 5em;\A 19: 		left: 0;"; }
+  content: "Error: Undefined mixin 'vendor'.\A         on line 16 of _header.scss, in `vendor'\A         from line 16 of _header.scss\A \A 11: }\A 12: \A 13: #header {\A 14:     \A 15:     \A 16:     @include vendor('display', 'flex');\A 17:     @include vendor('justify-content', 'space-between');\A 18:     background-color: _palette(bg);\A 19:     box-shadow: 0 0 4px rgba(111, 110, 110, 0.2);\A 20:     height: 4.5em;\A 21:     left: 0;"; }
