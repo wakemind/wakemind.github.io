@@ -2,7 +2,6 @@
 <html lang="{{ page.lang | default: site.lang | default: "ru" }}">
 
   {% include head.html %}
-
   {% if page.title %}
     <body class="single" style="background:#FFF;">
   {% else %}
@@ -18,8 +17,11 @@
 
     {% include header.html %}
 
+ 
     <main class="page-content" aria-label="Content">
+    	{% include sidebar.html %}
       <div id="main">
+      	  
         {{ content }}        
       </div>
     </main>

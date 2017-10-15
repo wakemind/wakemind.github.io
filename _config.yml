@@ -16,7 +16,7 @@
 # ////////////////
 # blog 源码地址：https://github.com/vikapitoshka/blog
 
-title: 元研究的网志
+title: 元习社
 
 description: > # this means to ignore newlines until "baseurl:"
   Блог Виктории Капитоненко. Нужен для сохранения информации, полезной лично для меня, но которая обычно забывается.<br>
@@ -28,7 +28,7 @@ url: "https://blog.kaptn.ru" # the base hostname & protocol for your site, e.g. 
 
 
 author:
-  name: '元研究'
+  name: '元叫兽'
   last_name: 'yuanyanjiu'
   avatar: '/images/avatar.jpeg'
   github_username:  wakemind  
