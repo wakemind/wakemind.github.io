@@ -195,23 +195,24 @@
 
 <script>
 	$(function(){
+		//setTimeout(function(){alert(1)},2000)
 		YugenLogo.initialize( {
         framerate: 20,
 
-        width: 300,
+        width: 290,
         height: 100,
 
         colorSpeedFactor: 0.4,
         morphSpeedFactor: 0.4,
-        introSpeedFactor: 1,
-        outroSpeedFactor: 2,
+        introSpeedFactor: 2,
+        outroSpeedFactor: 5,
 
         morphStrengthFactor: 0.5,
 
         morphBaseSpeedFactor: 0.2,
         normalOffsetFactor: 1.3,
 
-        maxShapeRotation: 0.2,
+        maxShapeRotation: 0.4,
 
         wordOffsetX: 0,
         wordOffsetY: 0,
@@ -223,16 +224,15 @@
         backgroundScaleX: 0.36,
         backgroundScaleY: 0.21,
 
-        shadowAlpha: 0.1,
-
-        shapeQuality: 9,
+        
+        shapeQuality: 13,
 
         containerID: "logo-bg",
         logoCanvasID: "yugen-logo-canvas",
 
         colors:[
-            [new YugenLogo.util.Color(240, 240, 240), new YugenLogo.util.Color(0, 0, 0)],
-            [new YugenLogo.util.Color(0, 0, 0), new YugenLogo.util.Color(240, 240, 240)]
+            [new YugenLogo.util.Color(240, 240, 240), new YugenLogo.util.Color(100, 100, 100)],
+            [new YugenLogo.util.Color(100, 100, 100), new YugenLogo.util.Color(240, 240, 240)]
         ],
 
         inputs: [

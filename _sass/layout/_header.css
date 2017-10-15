@@ -1,0 +1,67 @@
+/*
+Error: Undefined mixin 'vendor'.
+        on line 14 of _header.scss, in `vendor'
+        from line 14 of _header.scss
+
+9: body {
+10:     padding-top: 3.5em;
+11: }
+12: 
+13: #header {
+14:     @include vendor('display', 'flex');
+15:     @include vendor('justify-content', 'space-between');
+16:     padding: 0 2em;
+17:     background-color: _palette(bg);
+18:     box-shadow: 0 0 4px rgba(111, 110, 110, 0.2);
+19:     height: 4.5em;
+
+Backtrace:
+_header.scss:14:in `vendor'
+_header.scss:14
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:98:in `block in with_mixin'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:98:in `with_mixin'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:350:in `visit_mixin'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/engine.rb:384:in `_render_with_sourcemap'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/engine.rb:301:in `render_with_sourcemap'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:391:in `run'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/exec/base.rb:52:in `parse'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/lib/sass/exec/base.rb:19:in `parse!'
+/Users/aiwm/.rvm/rubies/ruby-2.4.1/lib/ruby/gems/2.4.0/gems/sass-3.4.25/bin/sass:13:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'vendor'.\A         on line 14 of _header.scss, in `vendor'\A         from line 14 of _header.scss\A \A 9: body {\A 10:     padding-top: 3.5em;\A 11: }\A 12: \A 13: #header {\A 14:     @include vendor('display', 'flex');\A 15:     @include vendor('justify-content', 'space-between');\A 16:     padding: 0 2em;\A 17:     background-color: _palette(bg);\A 18:     box-shadow: 0 0 4px rgba(111, 110, 110, 0.2);\A 19:     height: 4.5em;"; }

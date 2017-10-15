@@ -11,10 +11,9 @@ body {
 }
 
 #header {
-    
-    
     @include vendor('display', 'flex');
     @include vendor('justify-content', 'space-between');
+    padding: 0 2em;
     background-color: _palette(bg);
     box-shadow: 0 0 4px rgba(111, 110, 110, 0.2);
     height: 4.5em;
@@ -25,11 +24,11 @@ body {
     width: 100%;
     z-index: _misc(z-index-base);
     .logo-bg {
-       width: 320px;
-    height: 160px;
-    position: absolute;
-    top: -1em;
-    margin-left: -5.8em;
+        width: 320px;
+        height: 160px;
+        position: absolute;
+        top: -1em;
+        margin-left: -5.5em;
     }
     a {
         color: inherit;
@@ -50,10 +49,12 @@ body {
         line-height: inherit;
         padding: 0 0 0 1.5em;
         white-space: nowrap;
-            z-index: 2;
+        z-index: 2;
         a {
             font-size: 1.4em;
-            .uname{color:#FFF;}
+            .uname {
+                color: #FFF;
+            }
         }
     }
     .links {
