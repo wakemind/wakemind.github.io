@@ -19,10 +19,7 @@
 title: 元习社
 
 description: > # this means to ignore newlines until "baseurl:"
-  Блог Виктории Капитоненко. Нужен для сохранения информации, полезной лично для меня, но которая обычно забывается.<br>
-  Сайт написан на Jekyll и использует GitHub Pages.<br>
-  Блог с открытым исходным кодом размещен на <a href="//github.com/ViKapitoshka/blog">github</a>.<br>
-  Патчи, предложения и комментарии приветствуются.<br>
+  无知识研究学习之地
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.kaptn.ru" # the base hostname & protocol for your site, e.g. http://example.com
 
