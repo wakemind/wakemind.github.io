@@ -1,0 +1,27 @@
+--- 
+layout: default 
+---
+<div class="post-list">
+	{% for post in page.posts %}
+	<div class="post">
+		<header class="post-header">
+			<h1 class="post-title">
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h1>
+			<p class="post-meta">
+				<div>{{ post.date | date: "%b %-d, %Y" }}</div>
+				<div>{% if post.meta %} &middot; {{ post.meta }}{% endif %}</p>
+			</div>
+		</header>
+		<article class="post-content">
+			{{ post.excerpt | markdownify }}
+		</article>
+		<hr/>
+	</div>
+	{% endfor %} {% if page.prevUrl %}
+	<a class="page-next" href="{{ page.prevUrl | prepend: site.baseurl }}">上一页</a>
+	{% endif %} {% if page.nextUrl %}
+	<a class="page-next" href="{{ page.nextUrl | prepend: site.baseurl }}">下一页</a>
+	{% endif %}
+	当前 {{page.number}} / {{page.pages}} 页
+</div>

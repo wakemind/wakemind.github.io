@@ -1,12 +1,12 @@
 # blog page sections
 - name: 主题
-  href: '/javascript/'
+  href: '/javascript/page1.html'
   
 - name: 技术
-  href: '/javascript/'
+  href: '/javascript/page1.html'
 
 - name: 随笔
-  href: '/life/'
+  href: '/life/page1.html'
 
 - name: 联系
   href: '/codecademy/'

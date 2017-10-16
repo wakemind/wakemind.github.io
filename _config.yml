@@ -16,7 +16,7 @@
 # ////////////////
 # blog 源码地址：https://github.com/vikapitoshka/blog
 
-title: 元习社
+title: 徐sir的网志
 
 description: > # this means to ignore newlines until "baseurl:"
   无知识研究学习之地
@@ -25,7 +25,7 @@ url: "https://blog.kaptn.ru" # the base hostname & protocol for your site, e.g. 
 
 
 author:
-  name: '元叫兽'
+  name: '徐sir'
   last_name: 'yuanyanjiu'
   avatar: '/images/avatar.jpeg'
   github_username:  wakemind  
@@ -37,5 +37,19 @@ author:
 markdown: kramdown
 
 permalink: /:categories/:title.html
+#paginate: 2 # amount of posts to show
+#paginate_path: 'javascript/page:num'
+# Plugins
+#gems:
+ 
+  #- jekyll-paginate
 
-
+# https://github.com/codestacks/jekyll-category-pagination
+categories:
+    pagination: 1
+    generate_all: false
+    directory: .
+    details:
+      #all: {}
+      javascript:
+        pagination: 1
