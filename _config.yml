@@ -37,12 +37,12 @@ author:
 markdown: kramdown
 
 permalink: /:categories/:title.html
-#paginate: 2 # amount of posts to show
-#paginate_path: 'javascript/page:num'
+paginate: 2 # amount of posts to show
+paginate_path: 'javascript/page:num'
 # Plugins
-#gems:
+gems:
  
-  #- jekyll-paginate
+  - jekyll-paginate
 
 # https://github.com/codestacks/jekyll-category-pagination
 categories:
