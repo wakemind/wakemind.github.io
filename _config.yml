@@ -41,9 +41,8 @@ paginate: 2 # amount of posts to show
 paginate_path: 'javascript/page:num'
 # Plugins
 safe: false
-gems:
-  - jekyll-paginate
 
+gems: [paginator，jekyll-paginate]
 
 whitelist: [paginator]    
 # https://github.com/codestacks/jekyll-category-pagination
