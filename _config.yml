@@ -44,7 +44,7 @@ gems:
   - jekyll-paginate
 
 plugins:
-  - paginator
+  - jekyll-category-pagination
     
 # https://github.com/codestacks/jekyll-category-pagination
 categories:
