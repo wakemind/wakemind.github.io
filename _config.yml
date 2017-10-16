@@ -42,7 +42,7 @@ paginate_path: 'javascript/page:num'
 # Plugins
 gems:
   - jekyll-paginate
-safe: BOOL
+safe: false
 plugins:
   - jekyll-category-pagination
     
