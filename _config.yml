@@ -41,11 +41,10 @@ paginate: 2 # amount of posts to show
 paginate_path: 'javascript/page:num'
 # Plugins
 gems:
- 
   - jekyll-paginate
 
 plugins:
-  - jekyll-paginator
+  - paginator
     
 # https://github.com/codestacks/jekyll-category-pagination
 categories:
