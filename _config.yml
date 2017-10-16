@@ -40,9 +40,10 @@ permalink: /:categories/:title.html
 paginate: 2 # amount of posts to show
 paginate_path: 'javascript/page:num'
 # Plugins
+safe: false
 gems:
   - jekyll-paginate
-safe: false
+
 
 whitelist: [paginator]    
 # https://github.com/codestacks/jekyll-category-pagination
