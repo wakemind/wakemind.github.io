@@ -43,9 +43,8 @@ paginate_path: 'javascript/page:num'
 gems:
   - jekyll-paginate
 safe: false
-plugins:
-  - jekyll-category-pagination
-    
+
+whitelist: [paginator]    
 # https://github.com/codestacks/jekyll-category-pagination
 categories:
     pagination: 1
