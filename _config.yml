@@ -48,7 +48,7 @@ gems:
 categories:
     pagination: 1
     generate_all: false
-    directory: .
+    directory: cat
     details:
       #all: {}
       javascript:
