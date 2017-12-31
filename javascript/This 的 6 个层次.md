@@ -251,6 +251,7 @@ boss2.returnThis() // boss2
 
 ## 【参考资料】
 - [JavaScript This 的六道坎 | CRIMX](https://blog.crimx.com/2016/05/12/understanding-this/)
+- [javascript的 self和this使用小结 - 小昊 - 博客园](https://www.cnblogs.com/reommmm/archive/2010/01/20/1652469.html)
 
 
 

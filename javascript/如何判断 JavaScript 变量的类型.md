@@ -35,4 +35,7 @@ if (toString.call(myArray) === '[object Array]') {
     // 这是判断一个变量是否为数组的最可靠方法
 }
 ```
+【学习参考】
+*   [Javascript数组类型检测：编写更强壮的isArray函数](http://scriptfans.iteye.com/blog/318821)
+*   [JavaScript:Object.prototype.toString方法的原理](http://www.cnblogs.com/ziyunfei/archive/2012/11/05/2754156.html)
 

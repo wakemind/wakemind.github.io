@@ -1,4 +1,4 @@
-# 谈谈Javascript中的void操作符
+# 谈谈 Javascript 中的 void 操作符
 
 ## 1 引言
 
